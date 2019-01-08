@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "310286286194",
+    "firebase_url": "https://unilife-d6fb9.firebaseio.com",
+    "project_id": "unilife-d6fb9",
+    "storage_bucket": "unilife-d6fb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310286286194:android:731840ae262f5adc",
+        "android_client_info": {
+          "package_name": "com.teamo.app.unilife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "310286286194-qida5gmmav55cca8emsr0cudh3sbmst0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.teamo.app.unilife",
+            "certificate_hash": "9cd9074060f9befa9ee40aeb2eef449b94a42d10"
+          }
+        },
+        {
+          "client_id": "310286286194-k84rmeeeeej1ku6lh1sm82or61pl1jdb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUw4YCZ7nVAxMYuHBeQ7tC2Dytka6ICsg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "310286286194-k84rmeeeeej1ku6lh1sm82or61pl1jdb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
