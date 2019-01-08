@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CategoryActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/category_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtSecondHandStuff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:paddingBottom="4dp"
+        android:text="@string/second_hand_stuffs"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSecondHandStuff" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSearchingHomeMate" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSearchingRestaurants" />
+
+    <TextView
+        android:id="@+id/txtSearchingHomeMate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:paddingBottom="4dp"
+        android:text="@string/searching_home_mate"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtSecondHandStuff"
+        app:layout_constraintStart_toStartOf="@+id/txtSecondHandStuff"
+        app:layout_constraintTop_toBottomOf="@+id/txtSecondHandStuff" />
+
+    <TextView
+        android:id="@+id/txtSearchingRestaurants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:paddingBottom="4dp"
+        android:text="@string/searching_restaurants"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtSearchingHomeMate"
+        app:layout_constraintStart_toStartOf="@+id/txtSearchingHomeMate"
+        app:layout_constraintTop_toBottomOf="@+id/txtSearchingHomeMate" />
+
+</android.support.constraint.ConstraintLayout>

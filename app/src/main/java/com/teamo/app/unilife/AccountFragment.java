@@ -1,9 +1,11 @@
 package com.teamo.app.unilife;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,8 +18,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -35,6 +44,11 @@ public class AccountFragment extends Fragment {
     private FirebaseFirestore firebaseFirestore;
     private FirebaseAuth firebaseAuth;
 
+    private CircleImageView profileImage;
+    private TextView profileName, profileBio;
+
+    private Context context;
+
     public AccountFragment() {
     }
 
@@ -42,14 +56,37 @@ public class AccountFragment extends Fragment {
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
-        user_list_view = view.findViewById(R.id.profile_list_view);
+        //user_list_view = view.findViewById(R.id.profile_list_view);
+        profileImage = view.findViewById(R.id.profileImagePhoto);
+        profileName = view.findViewById(R.id.nProfileName);
+        profileBio = view.findViewById(R.id.nProfileBio);
 
     }
 
     private void handle(){
 
         firebaseAuth = FirebaseAuth.getInstance();
+        String user_id = firebaseAuth.getCurrentUser().getUid();
 
+        firebaseFirestore.collection("Users").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful() && task.getResult().exists()){
+
+                    String name = task.getResult().getString("name");
+                    String bio = task.getResult().getString("bio");
+                    String image = task.getResult().getString("image");
+
+                    profileName.setText(name);
+                    profileBio.setText(bio);
+
+                    RequestOptions requestOptions = new RequestOptions();
+                    requestOptions.placeholder(R.drawable.profilephoto);
+
+                    Glide.with(context).setDefaultRequestOptions(requestOptions).load(image).into(profileImage);
+                }
+            }
+        });
 
     }
 
@@ -60,6 +97,7 @@ public class AccountFragment extends Fragment {
         setHasOptionsMenu(true);
 
         View view = inflater.inflate(R.layout.fragment_account, container, false);
+        context = view.getContext();
 
         init(view);
         handle();

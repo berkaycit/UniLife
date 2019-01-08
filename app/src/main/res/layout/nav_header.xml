@@ -7,7 +7,7 @@
     android:layout_height="180dp"
     android:background="@color/colorWhite">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:layout_marginTop="10dp"
         android:layout_height="104dp"
         android:layout_width="104dp"

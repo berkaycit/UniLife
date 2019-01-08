@@ -111,8 +111,6 @@ public class SetupActivity extends AppCompatActivity {
                         placeholderRequest.placeholder(R.drawable.profilephoto);
 
                         Glide.with(SetupActivity.this).setDefaultRequestOptions(placeholderRequest).load(image).into(setupImage);
-
-
                     }
 
                 } else {

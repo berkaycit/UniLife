@@ -6,13 +6,12 @@
         android:title="@string/account_settings">
         <menu>
             <item
-                android:id ="@+id/navProfiliniDuzenle"
+                android:id ="@+id/navEditProfile"
                 android:checkable = "true"
                 android:icon = "@mipmap/user_profile_icon"
                 android:title = "@string/edit_profile" />
 
             <item
-                android:id ="@+id/navSifreDegistir"
                 android:checkable = "true"
                 android:icon = "@mipmap/user_password"
                 android:title = "@string/change_password" />
@@ -20,16 +19,13 @@
     </item>
 
     <item
-        android:id="@+id/navGeriBildirim"
         android:title="@string/feedbackandsupport">
         <menu>
             <item
-                android:id ="@+id/navPuanVer"
                 android:checkable ="true"
                 android:title ="@string/rate_us" />
 
             <item
-                android:id ="@+id/navPaylas"
                 android:checkable ="true"
                 android:title ="@string/share" />
 
@@ -37,7 +33,6 @@
     </item>
 
     <item
-        android:id="@+id/navHakkimizda"
         android:title="@string/about_us">
         <menu>
             <item

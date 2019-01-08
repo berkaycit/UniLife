@@ -19,4 +19,9 @@
         <item name="actionMenuTextColor">@color/colorWhite</item>
     </style>
 
+    <style name="DialogThemeBg" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+
+        <item name="android:windowBackground">@color/likeBtnGray</item>
+    </style>
+
 </resources>

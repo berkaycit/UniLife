@@ -30,6 +30,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar mainToolbar;
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ActionBarDrawerToggle drawerToggle;
 
     private TextView navUserName, navUserMail;
-    private ImageView userProfileImage;
+    private CircleImageView userProfileImage;
 
     private void init(){
         mDrawerLayout = findViewById(R.id.anaDrawerLayout);
@@ -232,40 +234,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-
-            case R.id.action_logout_btn:
-                logOut();
-                return true;
-
-            case R.id.action_settings_btn:
-
-                Intent settingsIntent = new Intent(MainActivity.this, SetupActivity.class);
-                startActivity(settingsIntent);
-
-                return true;
-
-
-            default:
-                return false;
-
-
-        }
-    }
-    */
-
     private void logOut() {
 
 
@@ -324,6 +292,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 logOut();
                 break;
 
+            case R.id.navEditProfile:
+                Intent toEdit = new Intent(MainActivity.this, SetupActivity.class);
+                startActivity(toEdit);
+                break;
         }
 
         mDrawerLayout.closeDrawer(GravityCompat.START);

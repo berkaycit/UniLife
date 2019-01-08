@@ -42,6 +42,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_post_image" />
 
+    <EditText
+        android:id="@+id/new_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:hint="@string/category"
+        android:maxLength="125"
+        android:padding="16dp"
+        android:textCursorDrawable="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_post_desc" />
+
     <Button
         android:id="@+id/post_btn"
         android:layout_width="0dp"
@@ -57,7 +76,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_post_desc" />
+        app:layout_constraintTop_toBottomOf="@+id/new_category" />
 
     <ProgressBar
         android:id="@+id/new_post_progress"
